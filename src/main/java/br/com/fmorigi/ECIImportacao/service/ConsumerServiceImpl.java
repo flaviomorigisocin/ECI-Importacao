@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 public class ConsumerServiceImpl implements ConsumerService {
     @Override
     public void action(String mensagem) {
-        System.out.println("Mensagem Recebida: " +mensagem);
+        if (mensagem.length() > 100) {
+            mensagem = mensagem.substring(0, 100) + "...";
+        }
+        System.out.println("Msg Recebida: " + mensagem );
     }
 }
